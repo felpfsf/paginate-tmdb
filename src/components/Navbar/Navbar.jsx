@@ -14,7 +14,7 @@ const Navbar = () => {
     e.preventDefault()
     console.log(searchTerm)
     if (!searchTerm) return navigate('/')
-    navigate(`/search/?q=${searchTerm}`)
+    navigate(`search/?q=${searchTerm}`)
     setSearchTerm('')
   }
   return (
