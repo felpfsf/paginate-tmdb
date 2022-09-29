@@ -18,7 +18,7 @@ const Search = () => {
   const [searchParams] = useSearchParams()
   const queryParam = searchParams.get('q')
 
-  const SEARCH_URL = `https://api.themoviedb.org/3/search/movie/?api_key=${API_KEY}&language=en-US&page=${pageNumber}&include_adult=false&query=${queryParam}`
+  const SEARCH_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=${pageNumber}&include_adult=false&query=${queryParam}`
 
   useEffect(() => {
     axios.get(SEARCH_URL).then(res => { setMovies(res.data) })
