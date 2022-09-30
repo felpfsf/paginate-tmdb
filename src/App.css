@@ -38,6 +38,7 @@ img {
   position: relative;
   width: 250px;
   aspect-ratio: 1/1;
+  cursor: pointer;
 }
 
 .movie__content {
@@ -52,6 +53,22 @@ img {
     rgba(0, 0, 0, 0) 0%,
     rgba(0, 0, 0, 0.9) 65%
   );
+}
+
+.dialog__overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.dialog__content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 20rem;
+  height: 35rem;
+  transform: translate(-50%, -50%);
+  background-color: rgba(42, 38, 52, 0.9);
 }
 
 .paginate__container {
