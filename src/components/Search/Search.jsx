@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom'
 import ReactPaginate from "react-paginate"
 import '../../App.css'
 import axios from 'axios'
+import MovieCard from '../MovieCard/MovieCard'
 
 
 const API_KEY = import.meta.env.VITE_TMDB_KEY
@@ -44,10 +45,16 @@ const Search = () => {
         {/* movies card */}
         {movies.results?.length === 0 && <p>Filme não encontrado</p>}
         {movies.results?.map(movie => (
-          <div key={movie.id} className='movie__card'>
-            <div className='movie__content'><p>{movie.title}</p></div>
-            <img src={movie?.backdrop_path ? `https://image.tmdb.org/t/p/original${movie?.backdrop_path}` : 'https://placekitten.com/300/400'} alt="" loading='lazy' />
-          </div >
+          // <div key={movie.id} className='movie__card'>
+          //   <div className='movie__content'><p>{movie.title}</p></div>
+          //   <img src={movie?.backdrop_path ? `https://image.tmdb.org/t/p/original${movie?.backdrop_path}` : 'https://placekitten.com/300/400'} alt="" loading='lazy' />
+          // </div >
+          <MovieCard
+            key={movie.id}
+            id={movie.id}
+            title={movie.title}
+            poster={movie?.backdrop_path}
+          />
         ))}
       </div >
     </div>

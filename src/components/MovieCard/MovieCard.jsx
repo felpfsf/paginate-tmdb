@@ -15,7 +15,7 @@ const MovieCard = (props) => {
       <Dialog.Root>
         <Dialog.Trigger className='movie__card' onClick={() => handleMovieClick(props.id)}>
           <div className='movie__content'><p>{props.title}</p></div>
-          <img src={`https://image.tmdb.org/t/p/original${props.poster}`} alt="" loading='lazy' />
+          <img src={props.poster ? `https://image.tmdb.org/t/p/original${props.poster}` : 'https://placekitten.com/300/400'} alt="" loading='lazy' />
         </Dialog.Trigger>
         <Dialog.Portal>
           <Dialog.Overlay className='dialog__overlay' />
